@@ -1,0 +1,205 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "id": "e040e04a-416d-4661-949d-135d723b5b9d",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "tables": {
+    "TMR": {
+      "name": "TMR",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "dob": {
+          "name": "dob",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "email": {
+          "name": "email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "phone": {
+          "name": "phone",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "facebook": {
+          "name": "facebook",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "gender": {
+          "name": "gender",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "uni": {
+          "name": "uni",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "otheruni": {
+          "name": "otheruni",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "livingplace": {
+          "name": "livingplace",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "highschool": {
+          "name": "highschool",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "uniplace": {
+          "name": "uniplace",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "universityyear": {
+          "name": "universityyear",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "major": {
+          "name": "major",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "long1": {
+          "name": "long1",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "long2": {
+          "name": "long2",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "long3": {
+          "name": "long3",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "long4": {
+          "name": "long4",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "long5": {
+          "name": "long5",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "long6": {
+          "name": "long6",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "long7": {
+          "name": "long7",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "long8": {
+          "name": "long8",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "channel": {
+          "name": "channel",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "sonder": {
+          "name": "sonder",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "gocamp": {
+          "name": "gocamp",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "receiveinformation": {
+          "name": "receiveinformation",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "timeperweek": {
+          "name": "timeperweek",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "appliedbefore": {
+          "name": "appliedbefore",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "mostpreferred": {
+          "name": "mostpreferred",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "secondpreferred": {
+          "name": "secondpreferred",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}

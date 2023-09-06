@@ -1,0 +1,45 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.tmrTableDefined = void 0;
+const pg_core_1 = require("drizzle-orm/pg-core");
+exports.tmrTableDefined = (0, pg_core_1.pgTable)('TMR', {
+    id: (0, pg_core_1.serial)('id').primaryKey(),
+    timestamp: (0, pg_core_1.text)("timestamp"),
+    utm_source: (0, pg_core_1.text)('utm_source'),
+    utm_medium: (0, pg_core_1.text)('utm_medium'),
+    utm_campaign: (0, pg_core_1.text)('utm_campaign'),
+    utm_term: (0, pg_core_1.text)('utm_term'),
+    utm_id: (0, pg_core_1.text)('utm_id'),
+    utm_content: (0, pg_core_1.text)('utm_content'),
+    name: (0, pg_core_1.text)("name"),
+    dob: (0, pg_core_1.text)("dob"),
+    email: (0, pg_core_1.text)("email"),
+    phone: (0, pg_core_1.text)("phone"),
+    facebook: (0, pg_core_1.text)("facebook"),
+    gender: (0, pg_core_1.text)("gender"),
+    uni: (0, pg_core_1.text)("uni"),
+    otheruni: (0, pg_core_1.text)("otheruni"),
+    livingplace: (0, pg_core_1.text)("livingplace"),
+    highschool: (0, pg_core_1.text)("highschool"),
+    uniplace: (0, pg_core_1.text)("uniplace"),
+    universityyear: (0, pg_core_1.text)("universityyear"),
+    major: (0, pg_core_1.text)("major"),
+    long1: (0, pg_core_1.text)("long1"),
+    long2: (0, pg_core_1.text)("long2"),
+    long3: (0, pg_core_1.text)("long3"),
+    long4: (0, pg_core_1.text)("long4"),
+    long5: (0, pg_core_1.text)("long5"),
+    long6: (0, pg_core_1.text)("long6"),
+    long7: (0, pg_core_1.text)("long7"),
+    long8: (0, pg_core_1.text)("long8"),
+    channel: (0, pg_core_1.text)("channel"),
+    sonder: (0, pg_core_1.text)("sonder"),
+    gocamp: (0, pg_core_1.text)("gocamp"),
+    receiveinformation: (0, pg_core_1.text)("receiveinformation"),
+    timeperweek: (0, pg_core_1.text)("timeperweek"),
+    appliedbefore: (0, pg_core_1.text)("appliedbefore"),
+    mostpreferred: (0, pg_core_1.text)("mostpreferred"),
+    secondpreferred: (0, pg_core_1.text)("secondpreferred"),
+    toSheet: (0, pg_core_1.boolean)("toSheet").default(false)
+});
+//# sourceMappingURL=tmr.js.map
