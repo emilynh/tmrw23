@@ -39,7 +39,8 @@ export const tmrTableDefined = pgTable('TMR', {
     appliedbefore: text("appliedbefore"),
     mostpreferred: text("mostpreferred"),
     secondpreferred: text("secondpreferred"),
-    toSheet: boolean("toSheet").default(false)
+    toSheet: boolean("toSheet").default(false),
+    codeInternal: text("codeInternal")
 });
 
 export type TMR = typeof tmrTableDefined.$inferSelect; // return type when queried

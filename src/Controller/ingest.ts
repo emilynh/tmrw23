@@ -1,10 +1,13 @@
 import { db } from "../Model/db";
-
+import { redisClient } from "./to_sheet";
+import { eq, and } from "drizzle-orm";
 import { Express, Request, Response, NextFunction } from "express"
 import { toSheetQ } from "./to_sheet";
 import { newTMR } from "../Model/tmr";
 import { tmrTableDefined } from "../Model/tmr";
+import {v4 as uuidv4} from "uuid"
 export async function ingestHandler(req: Request, res: Response, next: NextFunction) {
+    const codeInternGenerate = uuidv4()
     const payload: newTMR = {
         timestamp: req.body.timestamp,
         name: req.body.name,
@@ -40,25 +43,24 @@ export async function ingestHandler(req: Request, res: Response, next: NextFunct
         appliedbefore: req.body.appliedbefore,
         mostpreferred: req.body.mostpreferred,
         secondpreferred: req.body.secondpreferred,
-        gocamp: req.body.gocamp
-
+        gocamp: req.body.gocamp,
+        codeInternal:codeInternGenerate 
     };
     await db.insert(tmrTableDefined).values(payload)
-    .then(async () => {
-        await toSheetQ.add(`${payload.name} of ${payload.email} to sheet`, payload, {
-            removeOnComplete: true,
-            removeOnFail: false
-        })
+    .then(async () => await toSheetQ.add(`${payload.name} of ${payload.email} to sheet`, payload, { 
+        removeOnComplete: true,
+        removeOnFail: false
     })
-        //     await insertOgvLeadAndEmail(payload)
+    )
 
 
-        .then(() => {
-            res.status(201).json({ status: 201 });
-        })
-        .catch((error) => {
+        .then(
+        () =>
+            res.status(201).json({ status: 201 })
+        )
+        .catch((error:Error) => {
             console.error(error);
             res.status(504).json({ error: 'An error occurred' });
-        });
+        })
 
 }

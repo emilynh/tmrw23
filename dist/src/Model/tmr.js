@@ -40,6 +40,7 @@ exports.tmrTableDefined = (0, pg_core_1.pgTable)('TMR', {
     appliedbefore: (0, pg_core_1.text)("appliedbefore"),
     mostpreferred: (0, pg_core_1.text)("mostpreferred"),
     secondpreferred: (0, pg_core_1.text)("secondpreferred"),
-    toSheet: (0, pg_core_1.boolean)("toSheet").default(false)
+    toSheet: (0, pg_core_1.boolean)("toSheet").default(false),
+    codeInternal: (0, pg_core_1.text)("codeInternal")
 });
 //# sourceMappingURL=tmr.js.map

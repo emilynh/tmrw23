@@ -5,7 +5,7 @@ declare global {
         interface ProcessEnv {
             PORT: number;
             DATABASE_URL: string;
-
+            SHEET_URL: string;
             PGDATABASE: string;
             PGHOST: string;
             PGPASSWORD: string;

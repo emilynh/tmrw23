@@ -4,7 +4,9 @@ exports.ingestHandler = void 0;
 const db_1 = require("../Model/db");
 const to_sheet_1 = require("./to_sheet");
 const tmr_1 = require("../Model/tmr");
+const uuid_1 = require("uuid");
 async function ingestHandler(req, res, next) {
+    const codeInternGenerate = (0, uuid_1.v4)();
     const payload = {
         timestamp: req.body.timestamp,
         name: req.body.name,
@@ -40,18 +42,15 @@ async function ingestHandler(req, res, next) {
         appliedbefore: req.body.appliedbefore,
         mostpreferred: req.body.mostpreferred,
         secondpreferred: req.body.secondpreferred,
-        gocamp: req.body.gocamp
+        gocamp: req.body.gocamp,
+        codeInternal: codeInternGenerate
     };
     await db_1.db.insert(tmr_1.tmrTableDefined).values(payload)
-        .then(async () => {
-        await to_sheet_1.toSheetQ.add(`${payload.name} of ${payload.email} to sheet`, payload, {
-            removeOnComplete: true,
-            removeOnFail: false
-        });
-    })
-        .then(() => {
-        res.status(201).json({ status: 201 });
-    })
+        .then(async () => await to_sheet_1.toSheetQ.add(`${payload.name} of ${payload.email} to sheet`, payload, {
+        removeOnComplete: true,
+        removeOnFail: false
+    }))
+        .then(() => res.status(201).json({ status: 201 }))
         .catch((error) => {
         console.error(error);
         res.status(504).json({ error: 'An error occurred' });
