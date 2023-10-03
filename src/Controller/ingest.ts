@@ -47,7 +47,8 @@ export async function ingestHandler(req: Request, res: Response, next: NextFunct
         secondpreferred: req.body.secondpreferred,
         gocamp: req.body.gocamp,
         codeInternal:codeInternGenerate 
-    };
+    }
+    console.log(payload);
     await db.insert(tmrTableDefined).values(payload)
     .then(async () => await toSheetQ.add(`${payload.name} of ${payload.email} to sheet`, payload, { 
         removeOnComplete: true,

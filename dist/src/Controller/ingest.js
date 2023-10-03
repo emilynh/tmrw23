@@ -8,6 +8,7 @@ const uuid_1 = require("uuid");
 async function ingestHandler(req, res, next) {
     const codeInternGenerate = (0, uuid_1.v4)();
     const payload = {
+        timeperweek: req.body.timeWeek,
         timestamp: req.body.timestamp,
         name: req.body.name,
         email: req.body.email,
@@ -45,6 +46,7 @@ async function ingestHandler(req, res, next) {
         gocamp: req.body.gocamp,
         codeInternal: codeInternGenerate
     };
+    console.log(payload);
     await db_1.db.insert(tmr_1.tmrTableDefined).values(payload)
         .then(async () => await to_sheet_1.toSheetQ.add(`${payload.name} of ${payload.email} to sheet`, payload, {
         removeOnComplete: true,

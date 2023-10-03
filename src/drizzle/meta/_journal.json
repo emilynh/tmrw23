@@ -8,6 +8,13 @@
       "when": 1694013212587,
       "tag": "0000_third_prowler",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1696343307271,
+      "tag": "0001_material_talos",
+      "breakpoints": true
     }
   ]
 }
