@@ -10,7 +10,7 @@ export async function ingestHandler(req: Request, res: Response, next: NextFunct
     const codeInternGenerate = uuidv4()
     const payload: newTMR = {
     
-        timeperweek: req.body.timeperweek,
+        timeperweek: req.body.timeWeek,
         timestamp: req.body.timestamp,
         name: req.body.name,
         email: req.body.email,
